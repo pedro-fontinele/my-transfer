@@ -1,0 +1,24 @@
+INSTRUÇÕES GERAIS
+
+• Documentação do Integrador SFTP -> https://tdn.totvs.com/display/TVSSILC/Integrador+SFTP+Cloud
+
+Requisitos:
+.Net Core 7.0
+Preferencialmente utilizar Google Chrome ou Microsoft Edge para realizar as configuraçoes.
+
+Instalação e Desinstalação:
+O pacote de instalação possui dois batchs, install.bat e uninstall.bat e ambos DEVEM ser executados como Administrador.
+
+Para realizar a instalação, basta executar o install.bat, após isso, será solicitado a reinicialização do computador para todas as aplicações serem executadas corretamente.
+
+O diretório padrão de instalação é C:\C5Client\TOTVS\TCloudFileSync.Setup
+
+As aplicações tanto do backend/serviço quanto do frontend são executadas utilizando o Kestrel nativo do .Net Core.
+
+Na área de trabalho serão criados arquivos para execução do frontend, do backend e um atalho para abertura do painel de configuração pelo navegador.
+
+Os atalhos de execução também são inseridos na pasta Startup do windows.
+
+Para realizar a desinstalação da aplicação, basta executar o uninstall.bat.
+
+Observação, ao desinstalar a aplicação, TODAS AS CONFIGURAÇÕES são perdidas.

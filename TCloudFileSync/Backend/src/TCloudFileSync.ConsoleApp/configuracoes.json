@@ -1,0 +1,28 @@
+{
+  "ConfiguracaoClienteSftp": {
+    "host": "consinco157820.consinco.cloudtotvs.com.br",
+    "port": 2323,
+    "username": "ftp_prod_C5DEMO",
+    "password": "ejjWGxYRxAcYAwE3eB8u3SKX"
+  },
+  "ConfiguracaoEnvioArquivo": [
+    {
+      "Id": 1,
+      "Ativo": true,
+      "TempoParaIniciarProximoEnvio": 15000,
+      "DeveApagarArquivoOrigem": false,
+      "FluxoLocalParaNuvem": true,
+      "CaminhoArquivoLocal": "C:\\_testes",
+      "CaminhoArquivoNuvem": "/integracaosftp/LocalParaNuvem"
+    },
+    {
+      "id": 2,
+      "ativo": true,
+      "tempoParaIniciarProximoEnvio": 10000,
+      "deveApagarArquivoOrigem": false,
+      "fluxoLocalParaNuvem": false,
+      "caminhoArquivoLocal": "C:\\_testes\\NuvemParaLocal",
+      "caminhoArquivoNuvem": "/integracaosftp/NuvemParaLocal"
+    }
+  ]
+}

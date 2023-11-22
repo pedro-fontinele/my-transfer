@@ -1,0 +1,41 @@
+<po-page-default p-title="Configurar Mapeamento" [p-breadcrumb]="poBreadcrumbSettings" [p-actions]="pActionsForm">
+  <form #formsConfiguracaoSFTP="ngForm">
+      <po-divider p-label="DADOS DE ACESSO"></po-divider>
+      <div class="po-row">
+          <po-input [(ngModel)]="configuracaoSFTP.host" class="po-md-6" p-icon="po-icon po-icon-server" p-placeholder="Digite o host" p-required p-label="Host" name="host" p-clean></po-input>
+          <po-number [(ngModel)]="configuracaoSFTP.port" class="po-md-6" p-icon="po-icon po-icon-world" p-placeholder="Digite a porta" p-required p-label="Porta" name="port" p-clean></po-number>
+          <po-input [(ngModel)]="configuracaoSFTP.username" class="po-md-6" p-icon="po-icon-user" p-placeholder="Digite o username" p-required p-label="Username" name="username" p-clean></po-input>
+          <po-password [(ngModel)]="configuracaoSFTP.password" class="po-md-6" p-placeholder="Digite o password" p-required p-label="Password" name="password" p-clean></po-password>
+      </div>
+      <br/>
+      <po-divider p-label="MAPEAMENTO"></po-divider>
+      <po-button p-label="Adicionar Mapeamento" p-kind="primary" p-icon="po-icon po-icon-plus" (p-click)="abrirModalAddRotina()"></po-button>
+      <br/>
+      <br/>
+      <po-table [p-sort]="true" [p-columns]="columns" [p-items]="items" [p-show-more-disabled]="false" [p-actions]="pActionsTable" [p-actions-right]="true"></po-table>
+  </form>
+  <po-modal #modalAddOuEditarRotina p-title="Adicionar / Editar Mapeamento" p-size="md" [p-primary-action]="pPoModalAction">
+      <form #formAddOuEditarRotina="ngForm">
+        <div class="po-row">
+            <div class="po-md-6">
+                <po-input [(ngModel)]="rotina!.caminhoArquivoNuvem" name="caminhoArquivoNuvem" p-placeholder="Informe o caminho na nuvem" p-label="Caminho Nuvem" p-required p-clean></po-input>
+            </div>
+            <div class="po-md-6">
+                <po-input [(ngModel)]="rotina!.caminhoArquivoLocal" name="caminhoArquivoLocal" p-placeholder="Informe o caminho local" p-label="Caminho Local" p-required p-clean></po-input>
+            </div>
+            <div class="po-md-6">
+              <po-select  [ngModel]="rotina!.fluxoLocalParaNuvem" (ngModelChange)="rotina.fluxoLocalParaNuvem" name="fluxoLocalParaNuvem" [p-options]="opcaoSentidoDoSincronismo" p-label="Sentido de sincronismo" p-placeholder="Selecione uma opção" [p-clean]='true'></po-select>
+          </div>
+          <div class="po-md-6">
+              <po-number [(ngModel)]="rotina!.tempoParaIniciarProximoEnvio" name="tempoParaIniciarProximoEnvio"  p-label="Recorrência em milissegundos" p-placeholder="Intervalo de recorrência" p-clean></po-number>
+            </div>
+            <div class="po-md-6">
+                <po-select [ngModel]="rotina!.deveApagarArquivoOrigem" (ngModelChange)="rotina.deveApagarArquivoOrigem"  name="deveApagarArquivoOrigem" p-label="Remove arquivo da origem ao transmitir" p-placeholder="Selecione uma opção"  [p-options]="opcaoSimNao"  [p-clean]='true'></po-select>
+            </div>
+            <div class="po-md-6">
+              <po-select  [ngModel]="rotina!.ativo" (ngModelChange)="rotina.ativo"  name="ativo" p-label="Ativo" p-placeholder="Selecione uma opção"  [p-options]="opcaoSimNao" [p-clean]='true'></po-select>
+            </div>
+        </div>
+      </form>
+  </po-modal>
+</po-page-default>

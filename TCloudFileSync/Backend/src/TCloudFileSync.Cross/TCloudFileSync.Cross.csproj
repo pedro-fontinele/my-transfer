@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TCloudFileSync.Aplicacao\TCloudFileSync.Aplicacao.csproj" />
+    <ProjectReference Include="..\TCloudFileSync.Infra\TCloudFileSync.Infra.csproj" />
+    <ProjectReference Include="..\TCloudFileSync.RenciSSH\TCloudFileSync.RenciSSH.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+<po-page-default p-title="Histórico de sinconismo (últimos 20 arquivos)" [p-breadcrumb]="poBreadcrumbHistoric">
+  <po-button p-label="Atualizar" p-kind="primary" p-icon="po-icon po-icon-change" (p-click)="atualizaHistorico()"></po-button>
+  <br/>
+  <br/>
+  <po-table [p-sort]="true" [p-columns]="columns" [p-items]="items" [p-show-more-disabled]="true"></po-table>
+  <br/>
+  <div style="text-align: center;">
+    <po-button [p-disabled]='disabilitaBotao(items)' p-label="Carregar mais resultados" (p-click)="carregaMaisResultados()"></po-button>
+  </div>
+</po-page-default>

@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <!--<SelfContained>true</SelfContained>-->
+    <!--<RuntimeIdentifier>win-x86</RuntimeIdentifier>-->
+    <OutputType>WinExe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="*-temp\**" />
+    <Compile Remove="_logs\**" />
+    <Compile Remove="_database\**" />
+    <Content Remove="*-temp\**" />
+    <Content Remove="_logs\**" />
+    <Content Remove="_database\**" />
+    <EmbeddedResource Remove="*-temp\**" />
+    <EmbeddedResource Remove="_logs\**" />
+    <EmbeddedResource Remove="_database\**" />
+    <None Remove="*-temp\**" />
+    <None Remove="_logs\**" />
+    <None Remove="_database\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CliWrap" Version="3.6.4" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TCloudFileSync.Aplicacao\TCloudFileSync.Aplicacao.csproj" />
+    <ProjectReference Include="..\TCloudFileSync.Cross\TCloudFileSync.Cross.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Update="*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="*.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="*.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+
+</Project>
